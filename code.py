@@ -35,7 +35,7 @@ def wishMe():
     else:
         speak("Good Evening!")
 
-    speak("I am Annabelle mam. Please tell me how may I help you")
+    speak("I am Anna mam. Please tell me how may I help you")
 
 def takeCommand():
     #It takes microphone input from the user and returns string output
@@ -61,8 +61,8 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('subhashreem37@gmail.com', 'papuli@123')
-    server.sendmail('subhashreem37@gmail.com', to, content)
+    server.login('youremail@gmail.com', 'password')
+    server.sendmail('youremail@gmail.com', to, content)
     server.close()
 
 if __name__ == "__main__":
@@ -91,7 +91,7 @@ if __name__ == "__main__":
 
 
         elif 'play music' in query:
-            music_dir = 'D:\\Robin.mkv'
+            music_dir = 'path to music'
             songs = os.listdir(music_dir)
             print(songs)
             os.startfile(os.path.join(music_dir, songs[0]))
@@ -106,7 +106,7 @@ if __name__ == "__main__":
             try:
                 speak("What should I say?")
                 content = takeCommand()
-                to = "mdebasish57@gmail.com"
+                to = "receiver@gmail.com"
                 sendEmail(to, content)
                 speak("Email has been sent!")
             except Exception as e:
